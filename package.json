@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/drag-and-drop": "^0.5.3",
+    "framer-motion": "^12.34.0",
+    "immer": "^11.1.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

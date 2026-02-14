@@ -1,0 +1,129 @@
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 56px;
+  padding: 6px 18px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.itemGrip {
+  cursor: grab;
+  user-select: none;
+  opacity: 0.7;
+}
+.itemGrip:active {
+  cursor: grabbing;
+}
+
+.itemCheckWrap {
+  position: relative;
+  line-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+.itemCheckbox {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.itemCheckbox:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.itemCheckboxVisual {
+  position: absolute;
+  inset: 0;
+  width: 20px;
+  height: 20px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.itemCheckbox:not(:checked):hover + .itemCheckboxVisual {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.itemCheckbox:checked + .itemCheckboxVisual {
+  background: var(--checkbox-gradient);
+}
+
+.itemCheckMark {
+  color: #fff;
+  font-size: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.itemCheckbox:checked + .itemCheckboxVisual .itemCheckMark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.itemLabel {
+  flex: 1;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.itemRow[data-completed="true"] .itemLabel {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.itemDelete {
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  color: var(--text);
+  visibility: hidden;
+}
+
+.itemRow:hover .itemDelete,
+.itemRow:focus-within .itemDelete {
+  visibility: visible;
+}
+
+@media (pointer: coarse) {
+  .itemDelete {
+    visibility: visible;
+  }
+}
+
+.itemDelete:hover {
+  color: var(--danger);
+}
+
+@media (min-width: 768px) {
+  .itemRow {
+    min-height: 62px;
+    gap: 16px;
+  }
+  .itemCheckbox,
+  .itemCheckboxVisual {
+    width: 24px;
+    height: 24px;
+  }
+  .itemCheckMark {
+    font-size: 14px;
+  }
+}

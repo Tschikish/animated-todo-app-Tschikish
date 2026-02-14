@@ -1,0 +1,38 @@
+.headerRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.headerTitle {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.9rem;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: var(--header-text);
+}
+
+.themeToggle {
+  border: 0;
+  background: transparent;
+  color: var(--header-text);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .headerTitle {
+    font-size: 40px;
+    letter-spacing: 1rem;
+  }
+}
