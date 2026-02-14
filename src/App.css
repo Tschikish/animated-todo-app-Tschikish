@@ -68,6 +68,6 @@
 /* responsive */
 @media (min-width: 768px) {
   .hero {
-    height: 300px;
+    height: 5rem;
   }
 }
