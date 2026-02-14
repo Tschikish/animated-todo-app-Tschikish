@@ -77,7 +77,7 @@ export default function Items({
   });
 
   return () => {
-    if (typeof cleanup === "function") cleanup;
+    if (typeof cleanup === "function") cleanup();
   };
 }, [visibleTodos, todos, isFiltered, onSort]);
 
@@ -91,7 +91,6 @@ export default function Items({
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
             >
               <Item
                 {...t}
