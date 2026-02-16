@@ -1,14 +1,15 @@
 .page {
   min-height: 100vh;
   background: var(--bg);
+  background-size: 100% 300px;
   color: var(--text);
 }
 
-/* top background area */
+/* top background area
 .hero {
   height: 20px;
   background: var(--hero);
-}
+} */
 
 /* shared width container: header, input, list are same width */
 .shell {
@@ -16,7 +17,6 @@
   margin: 0 auto;
 
   /* pull up so input overlaps hero */
-  transform: translateY(calc(var(--overlap) * -1));
 }
 
 /* input overlap zone */
@@ -67,7 +67,9 @@
 
 /* responsive */
 @media (min-width: 768px) {
-  .hero {
-    height: 5rem;
+  .page {
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    padding-top: 4.75rem;
   }
 }

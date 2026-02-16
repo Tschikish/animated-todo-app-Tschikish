@@ -20,7 +20,6 @@ export default function App() {
 
   return (
     <div className="page">
-      <div className="hero" />
 
       <div className="shell">
         <Header theme={theme} onToggleTheme={toggleTheme} />
