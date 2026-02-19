@@ -22,9 +22,9 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
         title="Toggle theme"
       >
         {theme === "dark" ? (
-          <img src={MoonIcon}></img>
+          <img src={MoonIcon} alt="Moon"></img>
         ) : (
-          <img src={SunIcon}></img>
+          <img src={SunIcon} alt="Sun"></img>
         )}
       </button>
     </header>

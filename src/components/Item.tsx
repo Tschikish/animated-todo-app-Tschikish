@@ -54,7 +54,7 @@ export default function Item({
           className="itemCheckbox"
         />
         <span className="itemCheckboxVisual" aria-hidden="true">
-          <img src={checkIconUrl} className="itemCheckIcon" alt="" />
+          <img src={checkIconUrl} className="itemCheckIcon" alt="check" />
         </span>
       </div>
 
@@ -68,7 +68,7 @@ export default function Item({
         onClick={() => onDelete(id)}
         aria-label="Delete todo"
       >
-        <img src={IconCross} alt=""/>
+        <img src={IconCross} alt="cross"/>
       </button>
     </div>
   );
