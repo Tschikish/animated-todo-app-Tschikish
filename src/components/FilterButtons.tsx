@@ -1,6 +1,4 @@
 import type { TodoFilter } from "@/components/Items";
-import type { Dispatch, SetStateAction } from "react";
-
 function FilterButtons({
   filter,
   setFilter,

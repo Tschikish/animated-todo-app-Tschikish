@@ -20,36 +20,34 @@ export default function App() {
 
   return (
     <div className="page">
-
       <div className="shell">
         <Header theme={theme} onToggleTheme={toggleTheme} />
 
-        {/* Input sits “half in hero / half below” via overlap */}
         <div className="inputOverlap">
           <Input onNewTodo={actions.insertTodo} />
         </div>
 
-        {/* Small margin between input and list */}
-        <div className="listGap" />
-
         {todos.length > 0 ? (
-          <Items
-            todos={todos}
-            filter={filter}
-            onSort={actions.sortTodos}
-            onDelete={actions.removeTodo}
-            onCheck={actions.checkTodo}
-            onUncheck={actions.uncheckTodo}
-            onClearCompleted={actions.clearCompletedTodos}
-          />
+          <div className="listWrap">
+            <Items
+              todos={todos}
+              filter={filter}
+              onSort={actions.sortTodos}
+              onDelete={actions.removeTodo}
+              onCheck={actions.checkTodo}
+              onUncheck={actions.uncheckTodo}
+              onClearCompleted={actions.clearCompletedTodos}
+            />
+
+            <div className="filtersDock">
+              <FilterButtons filter={filter} setFilter={setFilter} />
+            </div>
+          </div>
         ) : (
           <div className="emptyState">
             Start by entering your first TODO in the box above
           </div>
         )}
-
-        {/* Minimal filter controls (since you didn’t show a Filters.tsx file) */}
-        <FilterButtons filter={filter} setFilter={setFilter} />
 
         <p className="hint">
           {todos.length > 0 ? "Drag and drop to reorder list" : ""}

@@ -1,75 +1,110 @@
 .page {
   min-height: 100vh;
-  background: var(--bg);
-  background-size: 100% 300px;
-  color: var(--text);
+  color: var(--primary);
+  background-color: var(--background);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
+
+  padding: 2.75rem 1.5rem 1.5rem;
 }
 
-/* top background area
-.hero {
-  height: 20px;
-  background: var(--hero);
-} */
-
-/* shared width container: header, input, list are same width */
 .shell {
-  width: min(var(--container), calc(100% - (var(--side-pad) * 2)));
   margin: 0 auto;
-
-  /* pull up so input overlaps hero */
+  max-width: 33.75rem;
 }
 
-/* input overlap zone */
 .inputOverlap {
-  margin-top: 8px;
+  margin-top: 0;
 }
 
-/* small gap between input and list */
-.listGap {
-  height: var(--gap-after-input);
+.listWrap {
+  position: relative;
+}
+
+.filtersDock {
+  margin-top: 1rem;
+  pointer-events: none;
+}
+.filterRow {
+  pointer-events: auto;
 }
 
 .emptyState {
-  margin-top: 16px;
+  margin-top: 5rem;
   padding: 14px;
   border: 1px dashed var(--border);
   border-radius: 12px;
-  color: var(--muted);
+  color: var(--primary);
   text-align: center;
 }
 
 .filterRow {
+  height: 3rem;
+  background: var(--foreground);
+  border-radius: 0.375rem;
+  box-shadow: var(--shadow-lg);
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 14px;
+  gap: 1.25rem;
+  font-weight: 700;
 }
 
 .filterBtn {
-  border: 1px solid var(--border);
+  border: 0;
   background: transparent;
-  color: var(--text);
-  padding: 8px 10px;
-  border-radius: 10px;
-  cursor: pointer;
+  color: var(--secondary);
+  padding: 0.25rem 0.35rem;
+  font: inherit;
 }
 
 .filterBtn.isActive {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+}
+
+.filterBtn:hover {
+  color: var(--primary-foreground);
 }
 
 .hint {
-  margin-top: 24px;
+  margin-top: 48px;
   text-align: center;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
-/* responsive */
 @media (min-width: 768px) {
   .page {
-    background-image: var(--bg-image);
-    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    padding-top: 4rem;
+  }
+
+
+  .shell {
+    max-width: 33.75rem;
+  }
+
+  .filtersDock {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    margin-top: 0;
+  }
+
+  .filterRow {
+    box-shadow: none;
+    height: 3rem;
+    font-size: 0.875rem;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
     padding-top: 4.75rem;
+  }
+
+  .shell {
+    max-width: 33.75rem; 
   }
 }

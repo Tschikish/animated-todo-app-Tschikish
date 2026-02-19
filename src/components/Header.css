@@ -2,24 +2,23 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .headerTitle {
   margin: 0;
   font-weight: 700;
-  letter-spacing: 0.9rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
-  font-size: 32px;
-  color: white;
+  font-size: 1.875rem; 
+  color: var(--white);
 }
 
 .themeToggle {
   border: 0;
   background: transparent;
-  color: var(--header-text);
-  cursor: pointer;
-  font-size: 22px;
+  color: var(--white);
+  font-size: 1.25rem;
   line-height: 1;
   padding: 6px;
   border-radius: 10px;
@@ -31,6 +30,21 @@
 }
 
 @media (min-width: 768px) {
+  .headerRow {
+    margin-bottom: 2.5rem;
+  }
+
+  .headerTitle {
+    font-size: 2.25rem; 
+    letter-spacing: 0.75rem;
+  }
+
+  .themeToggle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .headerTitle {
     font-size: 40px;
     letter-spacing: 1rem;

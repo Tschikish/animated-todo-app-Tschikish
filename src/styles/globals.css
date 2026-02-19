@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --font-family: "Josefin Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji";
+
+  --white: #fff;
+  --gray-50: hsl(0 0% 98%);
+  --gray-300: hsl(233 11% 84%);
+  --gray-600: hsl(236 9% 61%);
+  --purple-100: hsl(236 33% 92%);
+  --purple-300: hsl(234 39% 85%);
+  --purple-600: hsl(235 16% 43%);
+  --purple-700: hsl(233 14% 35%);
+  --purple-800: hsl(237 14% 26%);
+  --navy-850: hsl(235 19% 35%);
+  --navy-900: hsl(235 24% 19%);
+  --navy-950: hsl(235 21% 11%);
+  --blue-500: hsl(220 98% 61%);
+
+  --bg-gradient: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(to bottom right, hsl(192 100% 67%), hsl(280 87% 65%))
+      border-box;
+
+  --primary: var(--navy-850);
+  --primary-foreground: var(--navy-850);
+  --secondary: var(--gray-600);
+  --accent: var(--blue-500);
+  --muted: var(--purple-300);
+  --background: var(--gray-50);
+  --foreground: var(--white);
+  --border: var(--purple-100);
+  --danger: hsl(0 80% 60%);
+
+  --shadow: hsl(from var(--navy-850) h s calc(l + 54));
+  --shadow-lg: 0 7px 15px -3px var(--shadow), 0 3px 5px -4px var(--shadow);
+  --shadow-xl: 0 15px 25px -5px var(--shadow), 0 8px 10px -6px var(--shadow);
+
+  --bg-image: url("../assets/bg-mobile-light.jpg");
+}
+
+:root[data-theme="dark"],
+.dark {
+  --primary: var(--purple-300);
+  --primary-foreground: var(--purple-100); 
+  --secondary: var(--purple-600);
+  --muted: var(--gray-600);
+  --background: var(--navy-950);
+  --foreground: var(--navy-900);
+  --border: var(--purple-800);
+  --danger: hsl(0 80% 60%);
+  --shadow: hsl(from var(--navy-950) h s calc(l - 1000));
+
+  --bg-image: url("../assets/bg-mobile-dark.jpg");
+}
+
+@media (min-width: 768px) {
+  :root {
+    --bg-image: url("../assets/bg-desktop-light.jpg");
+  }
+
+  :root[data-theme="dark"],
+  .dark {
+    --bg-image: url("../assets/bg-desktop-dark.jpg");
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+body {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

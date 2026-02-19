@@ -15,12 +15,14 @@ type Action =
   | { type: "clearCompleted" }
   | { type: "setOrder"; todos: Todo[] };
 
-// const seedTodos: Todo[] = [
-//   { id: "t-1", content: "Complete online JavaScript course", completed: true },
-//   { id: "t-2", content: "Jog around the park 3x", completed: false },
-//   { id: "t-3", content: "10 minutes meditation", completed: false },
-//   { id: "t-4", content: "Read for 1 hour", completed: false },
-// ];
+const seedTodos: Todo[] = [
+  { id: "t-1", content: "Check up on those Jira tickets I've been avoiding", completed: false },
+  { id: "t-2", content: "Brush up my CV", completed: true },
+  { id: "t-3", content: "30 minute Yoga session", completed: false },
+  { id: "t-4", content: "Text friends instead of just liking their stories", completed: false },
+  { id: "t-5", content: "Clean up 200+ unread emails", completed: true },
+  { id: "t-6", content: "Cry about implementing Motion and DND", completed: false },
+];
 
 function reducer(state: Todo[], action: Action) {
   return produce(state, (draft) => {
@@ -57,7 +59,7 @@ function reducer(state: Todo[], action: Action) {
 }
 
 export function useTodos() {
-  const [todos, dispatch] = useReducer(reducer, []);
+  const [todos, dispatch] = useReducer(reducer, seedTodos);
 
   const actions = useMemo(
     () => ({

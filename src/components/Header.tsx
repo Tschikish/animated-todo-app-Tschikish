@@ -1,5 +1,7 @@
 import React from "react";
 import "./Header.css";
+import MoonIcon from "./icons/icon-moon.svg";
+import SunIcon from "./icons/icon-sun.svg";
 
 export type Theme = "dark" | "light";
 
@@ -20,7 +22,11 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
         aria-label="Toggle theme"
         title="Toggle theme"
       >
-        {theme === "dark" ? "🌙" : "☀️"}
+        {theme === "dark" ? (
+          <img src={MoonIcon}></img>
+        ) : (
+          <img src={SunIcon}></img>
+        )}
       </button>
     </header>
   );
