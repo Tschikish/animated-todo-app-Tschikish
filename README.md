@@ -35,12 +35,6 @@ Users should be able to:
 
 ---
 
-
-### Links
-
-- Live Site URL: [Todo App on Netlify](https://animated-todos-jvmdo.netlify.app)
-- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/draggable-and-animated-todos-NGAtcm1pW2)
-
 ---
 
 ## My process
